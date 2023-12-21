@@ -18,5 +18,6 @@ Memory card for Anki
 - Alias ZSH
 - VIM shortcuts
 - MacOS Shell commands
+- HTML
 
 (Notes en Francais)
