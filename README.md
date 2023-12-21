@@ -19,5 +19,6 @@ Memory card for Anki
 - VIM shortcuts
 - MacOS Shell commands
 - HTML
+- CSS
 
 (Notes en Francais)

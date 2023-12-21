@@ -6,11 +6,15 @@
 #    By: YohanGH <YohanGH@proton.me>                    //    ''     Code      #
 #                                                      (|     | )              #
 #    Created: 2023/12/08 15:46:04 by YohanGH           '__   _/_               #
-#    Updated: 2023/12/21 16:56:04 by YohanGH          (___)=(___)              #
+#    Updated: 2023/12/21 17:44:38 by YohanGH          (___)=(___)              #
 #                                                                              #
 # **************************************************************************** #
 
-# 1.1.0
+# 1.3.0
+
+Add packet CSS
+
+# 1.2.0
 
 Add packet HTML
 
