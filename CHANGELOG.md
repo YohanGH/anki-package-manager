@@ -12,9 +12,15 @@
 # **************************************************************************** #
 ```
 
+# 1.4.1
+
+Modification du packet shortcuts vim en My shortcuts vim.
+Modification of the new name Shortcuts vim
+Add html and css to My Shortcuts vim notes
+
 # 1.4.0
 
-Add packet Vi - Vim shortcuts
+Add packet Vi - Vim shortcuts.
 
 # 1.3.1
 
