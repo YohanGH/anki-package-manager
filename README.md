@@ -16,7 +16,8 @@ Memory card for Anki
 
 - MacOS shortcuts
 - Alias ZSH
-- VIM shortcuts
+- VIM My shortcuts
+- Vi and Vim Shortcuts
 - MacOS Shell commands
 - HTML
 - CSS
