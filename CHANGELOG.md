@@ -11,13 +11,18 @@
 #                                                                              #
 # **************************************************************************** #
 ```
+
+# 1.4.4
+
+Add html and css to CSS.
+
 # 1.4.3
 
-Add html and css tp Alias zsh
+Add html and css to Alias zsh.
 
 # 1.4.2
 
-Add html and css to Shortcuts macOS
+Add html and css to Shortcuts macOS.
 
 # 1.4.1
 
