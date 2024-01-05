@@ -11,6 +11,11 @@
 #                                                                              #
 # **************************************************************************** #
 ```
+# 1.4.6
+
+Removed Alias ZSH.apkg and Commands shell.apkg files.
+Restructured folders for clearer understanding (Styles, SampleDecks, Guides).
+Added detailed documentation in /Guides.
 
 # 1.4.5
 
