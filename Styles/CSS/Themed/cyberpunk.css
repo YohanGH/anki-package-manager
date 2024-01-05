@@ -1,0 +1,51 @@
+/* Style pour les tags (assurez-vous que la classe correspond) */
+.tag {
+  background-color: #ff00ff;
+  color: #0f0f0f;
+  border-radius: 5px;
+  padding: 2px 5px;
+  margin-right: 5px;
+  font-size: 12px;
+  display: inline-block;
+}
+
+/* Style de base pour la carte */
+.card {
+  font-family: 'Courier New', monospace;
+  background-color: #0f0f0f;
+  color: #f3f99d; /* Couleur jaune néon pour le texte */
+  text-align: ceter; /* Alignement du texte */
+  padding: 20px;
+  text-shadow: 0 0 10px #f3f99d; /* Ombre jaune néon pour le texte */
+  border: 1px solid #ff00ff;
+  background-image: url('cyberpunk-background.jpg');
+  background-size: cover;
+  border-radius: 10px;
+  box-shadow: 0 0 15px #39ff14; /* Ombre néon autour de la carte */
+}
+
+/* Style pour les lignes horizontales */
+hr {
+  border: 1px dashed #ff00ff;
+  margin: 10px 0;
+}
+
+/* Style pour les images */
+img {
+  border: 2px solid #39ff14;
+  border-radius: 5px;
+  max-width: 350px; /* Réduction de la taille de l'image */
+  height: auto;
+  box-shadow: 0 0 10px #39ff14; /* Ombre néon autour de l'image */
+}
+
+/* Style pour les cloze */
+.cloze {
+  color: #ff00ff;
+  font-weight: bold;
+  background-color: #262626;
+  padding: 2px 4px;
+  border-radius: 4px;
+  box-shadow: 0 0 7px #ff00ff; /* Ombre néon pour les cloze */
+}
+
