@@ -11,6 +11,15 @@
 #                                                                              #
 # **************************************************************************** #
 ```
+
+# 1.5.0
+
+- New Folders and Packages:
+  - Addition of the `Agile` folder containing the `Kanban` and `Scrum` packages, providing comprehensive resources on these Agile methodologies.
+  - Creation of the `ProjectManagement` folder with the `Dashboard` package, offering tools and techniques for effective project management.
+- Creation of the `Git` folder with the `Git` package, a beginner's guild.
+  - Updated documentation and `README.md` files for each new package to guide users in their use.
+
 # 1.4.6
 
 Removed Alias ZSH.apkg and Commands shell.apkg files.
