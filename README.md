@@ -25,6 +25,12 @@ En plus de la récupération de paquets existants, les utilisateurs peuvent éga
 
 Pour des guides détaillés, des exemples et des informations sur la contribution au projet, veuillez consulter notre [Wiki](https://github.com/YohanGH/anki-package-manager/wiki).
 
+## Langue des Cartes
+Toutes les cartes de ce projet sont rédigées en français pour faciliter l'apprentissage pour les francophones.
+
+## Disponibilité sur Anki
+Les paquets sont également disponibles directement sur la plateforme Anki. Vous pouvez les trouver et les ajouter à votre collection via l'option d'ajout de deck communautaire d'Anki.
+
 ## Utilisation
 
 ###Création de Paquets
