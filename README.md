@@ -21,6 +21,10 @@ L'objectif principal est de fournir une plateforme flexible où les utilisateurs
 
 En plus de la récupération de paquets existants, les utilisateurs peuvent également contribuer à la bibliothèque en créant et en partageant leurs propres ensembles de cartes, enrichissant ainsi la communauté d'apprenants Anki. Que ce soit pour les étudiants, les professionnels ou les autodidactes, ce gestionnaire de paquets vise à rendre l'apprentissage plus accessible, organisé et personnalisé.
 
+## Documentation
+
+Pour des guides détaillés, des exemples et des informations sur la contribution au projet, veuillez consulter notre [Wiki](https://github.com/YohanGH/anki-package-manager/wiki).
+
 ## Utilisation
 
 ###Création de Paquets
