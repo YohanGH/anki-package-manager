@@ -11,6 +11,11 @@
 #                                                                              #
 # **************************************************************************** #
 ```
+# 1.6.0
+
+- New Folders and Packages:
+  - Added a new "Guide for Parents and Teachers" package to the `Education` folder. This package is designed to provide parents and teachers with resources and strategies to support children in their learning journey.
+  - Added a new "Agile" packatge to the 'Agile'. Agile method principle.
 
 # 1.5.0
 
