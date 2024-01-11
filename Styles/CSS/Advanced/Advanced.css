@@ -1,0 +1,50 @@
+/* Styles pour les tags */
+
+.tag {
+  color: black;
+  background-color: white;
+  border-radius: 14px;
+  font-size: 14px;
+  padding: 2px 10px;
+  margin-right: 5px;
+  display: inline-block;
+  border: 1px solid black;
+}
+
+/* Positionnement des tags en bas à droite de la carte */
+
+.tags {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+}
+
+/* Styles pour les éléments cloze */
+
+.cloze {
+  font-weight: bold;
+  color: black;
+}
+
+/* Styles globaux de la carte */
+
+.card {
+  font-family: 'Helvetica Neue', Arial, sans-serif;
+  font-size: 20px;
+  color: black;
+  background-color: white;
+  padding: 30px;
+  border-radius: 30px;
+  box-shadow: none;
+  border: 1px solid black;
+  position: relative;
+}
+
+/* Styles pour la ligne pointillée */
+
+#answer {
+  border: none;
+  border-top: 2px dashed black;
+  margin: 30px;
+}
+
