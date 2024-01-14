@@ -11,6 +11,20 @@
 #                                                                              #
 # **************************************************************************** #
 ```
+# 1.7.0
+
+- New Folders and Packages:
+    - Guilde parents et Professeurs
+    - Etude Profil Cybersecurite
+    - Vie privee confidentialite des donnees sous windows 10
+    - Linkedin
+    - Raconter une histoire
+    - Markdown
+    - Gestion du temps Efficace
+    - Algacratie
+    - Unique
+    - Ergonimie Web
+
 # 1.6.0
 
 - New Folders and Packages:
