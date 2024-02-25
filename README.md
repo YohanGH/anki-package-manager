@@ -58,13 +58,60 @@ Pour appliquer un style CSS, accédez à la section de personnalisation des cart
   background-color: #f5f5f5;
   color: #333333;
 }
-
 ```
 
 Cet exemple définit une police de caractère, un arrière-plan, et une couleur de texte pour les cartes. Vous pouvez étendre ou modifier ces styles selon vos préférences.
 
 
+## Arborescence
+
+```
+SampleDecks/
+├── Cybersecurity
+│   ├── Guide_Pare-Feux.apkg
+│   ├── Guide_Wifi.apkg
+│   ├── Profil_professionnels_cybersécurité.apkg
+│   └── Vie_privée_et_confidentialité_des_données_sous_Windows10.apkg
+├── Editors_Shortcuts
+│   ├── MacOS
+│   │   └── Raccoucis_MacOS.apkg
+│   ├── Vim
+│   │   └── Raccourcis_Vi_Vim.apkg
+│   └── Zsh
+│       └── Alias_ZSH.apkg
+├── Education
+│   └── Guides_pour_Parents_Enseignants.apkg
+├── Personal_Development
+│   ├── Algocratie.apkg
+│   ├── Linkedin.apkg
+│   ├── Mind_Map.apkg
+│   ├── Raconter_une_histoire.apkg
+│   └── Unique.apkg
+└── Programming
+    ├── Agile
+    │   ├── Agile.apkg
+    │   ├── Kanban.apkg
+    │   └── Scrum.apkg
+    ├── GestionDeProjet
+    │   └── Tableau_de_bord.apkg
+    ├── Shell
+    │   └── Shell_Commands_MacOS.apkg
+    ├── UX_and_Ergonomics
+    │   ├── Design.apkg
+    │   └── Ergonomie_web_UX_Design.apkg
+    └── Web_Development
+        ├── CSS
+        │   └── CSS.apkg
+        ├── Git
+        │   └── Git.apkg
+        ├── HTML
+        │   └── HTML.apkg
+        └── Markdown
+            └── Markdown.apkg
+```
+
 ## Licence
 
 Ce projet est distribué sous la Licence Publique Générale GNU (GPL), ce qui garantit aux utilisateurs la liberté de partager et de changer toutes les versions du programme, pour veiller à ce que le logiciel soit libre pour tous ses utilisateurs. Pour plus de détails, veuillez consulter le fichier LICENSE dans le dépôt.
+
 

@@ -11,6 +11,19 @@
 #                                                                              #
 # **************************************************************************** #
 ```
+
+# 1.8.0
+
+- New packets
+    - Guide Wifi
+    - Guide Pare-Feux
+    - MindMap
+    - Design
+
+# 1.7.1
+
+- Update Files for CSS Card.
+
 # 1.7.0
 
 - New Folders and Packages:
