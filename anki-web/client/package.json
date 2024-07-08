@@ -1,18 +1,25 @@
 {
   "name": "client",
+  "type": "module",
   "version": "1.0.0",
-  "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "vite --host",
+    "build": "vite build",
+    "preview": "vite preview",
+    "test": "jest"
   },
   "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "author": "YohanGH",
+  "license": "LGPL-2.0-only",
   "description": "",
   "dependencies": {
     "@emotion/react": "^11.11.4",
     "@emotion/styled": "^11.11.5",
     "@mui/material": "^5.15.21",
     "react-toastify": "^10.0.5"
+  },
+  "lint-staged": {
+    "*.{html,scss,css}": "prettier --check",
+    "*.{jsx,js}": "eslint --report-unused-disable-directives"
   }
 }

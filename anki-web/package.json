@@ -2,13 +2,31 @@
   "name": "anki-web",
   "private": true,
   "version": "0.0.0",
-  "type": "module",
+  "description": "",
+  "homepage": "https://github.com/YohanGH/anki-package-manager/blob/main/README.md",
+  "workspaces": [
+    "client",
+    "server"
+  ],
+  "bugs": {
+    "url": "https://github.com/YohanGH/anki-package-manager/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/YohanGH/anki-package-manager"
+  },
   "scripts": {
+    "db:migrate": "npm run db:migrate --workspace=server",
+    "db:seed": "npm run db:seed --workspace=server",
     "dev": "vite",
     "build": "vite build",
     "lint": "eslint . --ext js,jsx --report-unused-disable-directives --max-warnings 0",
+    "test": "npm run test --workspaces --if-present",
     "preview": "vite preview"
   },
+  "keywords": [],
+  "author": "YohanGH",
+  "license": "GPL-2.0-only",
   "dependencies": {
     "express": "^4.19.2",
     "react": "^18.3.1",
