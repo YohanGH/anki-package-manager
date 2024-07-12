@@ -4,10 +4,6 @@
   "version": "0.0.0",
   "description": "",
   "homepage": "https://github.com/YohanGH/anki-package-manager/blob/main/README.md",
-  "workspaces": [
-    "client",
-    "server"
-  ],
   "bugs": {
     "url": "https://github.com/YohanGH/anki-package-manager/issues"
   },
@@ -15,6 +11,10 @@
     "type": "git",
     "url": "git+https://github.com/YohanGH/anki-package-manager"
   },
+  "workspaces": [
+    "client",
+    "server"
+  ],
   "scripts": {
     "db:migrate": "npm run db:migrate --workspace=server",
     "db:seed": "npm run db:seed --workspace=server",
