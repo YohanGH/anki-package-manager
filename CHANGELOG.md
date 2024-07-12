@@ -11,6 +11,9 @@
 #                                                                              #
 # **************************************************************************** #
 ```
+# 2.0.0
+- Creation of a graphical interface for package management
+  - Create folder anki-web
 
 # 1.8.0
 
