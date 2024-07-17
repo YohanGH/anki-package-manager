@@ -1,4 +1,5 @@
 const AbstractSeeder = require("./AbstractSeeder");
+require('dotenv').config();
 
 class UserSeeder extends AbstractSeeder {
   constructor() {
@@ -6,22 +7,16 @@ class UserSeeder extends AbstractSeeder {
     super({ table: "user", truncate: true });
   }
 
-  // The run method - Populate the 'user' table with fake data
-
+  // The run method - Populate the 'user' table with data
   run() {
-    // Generate and insert fake data into the 'user' table
-    for (let i = 0; i < 10; i += 1) {
-      // Generate fake user data
-      const fakeUser = {
-        role: this.faker.internet.userName(), // Generate a fake role using faker library
-        email: this.faker.internet.email(), // Generate a fake email using faker library
-        password: this.faker.internet.password(), // Generate a fake password using faker library
-        refName: `user_${i}`, // Create a reference name for the user
-      };
+    // Insert admin user from environment variables
+    const adminUser = {
+      role: process.env.ADMIN_ROLE,
+      email: process.env.ADMIN_EMAIL,
+      password: process.env.ADMIN_PASSWORD,
+    };
 
-      // Insert the fakeUser data into the 'user' table
-      this.insert(fakeUser); // insert into user(email, password) values (?, ?)
-    }
+    this.insert(adminUser); // Insert the admin user into the 'user' table 
   }
 }
 
