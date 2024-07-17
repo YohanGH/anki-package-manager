@@ -15,10 +15,10 @@ function DeckManagement() {
       <Container maxWidth="md">
         <Box sx={{ mt: "2rem", textAlign: "center" }}>
           <Typography variant="h4" component="h1" gutterBottom>
-            Gérer les Decks
+          Manage Decks
           </Typography>
           <FormControl fullWidth sx={{ mb: "1rem" }}>
-            <InputLabel>Filtrer</InputLabel>
+            <InputLabel>Filter</InputLabel>
             <Select
               value={filter}
               onChange={handleFilterChange}

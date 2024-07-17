@@ -1,11 +1,12 @@
-import { Box, Typography } from "@mui/material";
+import { Box } from "@mui/material";
+
+// Import component
+import Copyright from "../copyright/Copyright";
 
 function Footer() {
     return (
       <Box component="footer">
-        <Typography variant="body2">
-          © 2024 My App. Tous droits réservés.
-        </Typography>
+        <Copyright />
       </Box>
     );
 }

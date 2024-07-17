@@ -10,13 +10,13 @@ function NavBar() {
         </Typography>
         <Box>
           <Button color="inherit" component={RouterLink} to="/">
-            Accueil
+            Home
           </Button>
           <Button color="inherit" component={RouterLink} to="create-deck">
-            Créer un Deck
+            Create Deck
           </Button>
           <Button color="inherit" component={RouterLink} to="manage-decks">
-          Gérer les Decks
+            Decks
           </Button>
         </Box>
       </Toolbar>

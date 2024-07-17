@@ -86,7 +86,7 @@ function LoginPage() {
                 variant="contained"
                 sx={{ mt: "3rem", mb: "2rem" }}
               >
-                Connexion
+                Sign in
               </Button>
               <Grid container>
                 <Grid item xs>

@@ -9,26 +9,25 @@ import MainFeaturedPost from "../../components/main_featured_post/MainFeaturedPo
 import FeaturedPost from "../../components/featured_post/FeaturedPost";
 
 const mainFeaturePost = {
-    title: "Bienvenue sur Anki deck manager",
-    description: "Le projet Gestionnaire de Paquets Anki Personnalisés offre une solution innovante pour le stockage, la gestion et la personnalisation de paquets d'apprentissage Anki.",
+    title: "Welcome to Anki deck manager",
+    description: "The Customised Anki Package Manager project offers an innovative solution for storing, managing and customising Anki learning packages.",
     image: Zen, // TODO : Change images
-    imageText: "LoremIpsum", // TODO : Change image text
-    linkText: "Lire la suite...",
+    imageText: "representation of person", // TODO : Change image text
 }
 
 /* TODO Deporting in database */
 const featuredPosts = [
   {
-    title: "LoremIpsum", // TODO : Change text
+    title: "New decks available !", // TODO : Change text
     date: "Juillet 2024",
-    description: "Lorem", // TODO : Change text
+    description: "We have just received several decks on different themes, see the deck page.", // TODO : Change text
     image: Zen, // TODO : Change images
     imageLabel: "thinking", // TODO : Change text
   },
   {
-    title: "Verba volant, scripta manent", // TODO : Change text
+    title: "Quote : Albert Einstein", // TODO : Change text
     date: "Juillet 2024",
-    description: "Lorem", // TODO : CHange text
+    description: "Knowledge is acquired through experience, everything else is just information.", // TODO : CHange text
     image: Zen, // TODO : Change images
     imageLabel: "thinking", // TODO : Change text
   },
@@ -47,9 +46,6 @@ function HomePage() {
                   <FeaturedPost key={post.title} post={post} />
                 ))}
               </Grid>
-              {/* <Grid container spacing={5} sx={{ mt: 3 }}>
-                <MainContent title="From the firehose" />
-              </Grid> */}
             </main>
           </Container>
         </Container>

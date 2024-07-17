@@ -13,7 +13,7 @@ function DeckCard({ name, description }) {
           </Typography>
         </CardContent>
         <CardActions>
-          <Button size="small">Télécharger</Button>
+          <Button size="small">Download</Button>
         </CardActions>
       </Card>
     );

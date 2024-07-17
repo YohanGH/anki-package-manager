@@ -45,7 +45,7 @@ function DeckCreation() {
       <Container maxWidth="sm">
         <Box sx={{ mt: "2rem", textAlign: "center" }}>
           <Typography variant="h4" component="h1" gutterBottom>
-            Créer un Deck
+            Create a Deck
           </Typography>
           <Box
             component="form"
@@ -56,7 +56,7 @@ function DeckCreation() {
             autoComplete="off"
             onSubmit={handleSubmit}
           >
-            <TextField resource label="Titre" variant="outlined" name="title" />
+            <TextField resource label="Title" variant="outlined" name="title" />
             <TextField
               resource
               label="Description"
@@ -66,9 +66,9 @@ function DeckCreation() {
               rows={4}
             />
             <FormControl variant="outlined" fullWidth sx={{ mb: "1rem" }}>
-              <InputLabel>Filtres</InputLabel>
+              <InputLabel>Filters</InputLabel>
               <Select
-                label="Filtres"
+                label="Filters"
                 name="filters"
                 multiple
                 value={filters}
@@ -81,7 +81,7 @@ function DeckCreation() {
               </Select>
             </FormControl>
             <Button variant="contained" component="label" fullWidth>
-              Télécharger
+              Download
               <input
                 type="file"
                 hidden
@@ -91,7 +91,7 @@ function DeckCreation() {
             </Button>
             {fileName && (
               <Alert severity="info" sx={{ mt: "1rem " }}>
-                Fichier sélectionné : {fileName}
+                Selected file : {fileName}
               </Alert>
             )}
             <Button
@@ -101,7 +101,7 @@ function DeckCreation() {
               fullWidth
               sx={{ mt: "1rem" }}
             >
-              Soumettre
+              Send
             </Button>
           </Box>
         </Box>
