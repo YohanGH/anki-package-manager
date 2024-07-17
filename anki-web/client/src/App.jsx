@@ -5,6 +5,7 @@ import { ToastContainer } from "react-toastify";
 import NavBar from "./components/navbar/Navbar";
 import Footer from "./components/footer/Footer";
 
+
 function App() {
   const location = useLocation();
   const noFooter = ["/signIn"]
