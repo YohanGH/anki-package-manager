@@ -9,6 +9,7 @@ import HomePage from "./pages/home_page/HomePage";
 import DeckCreation from "./pages/deck_creation/DeckCreation";
 import DeckManagement from "./pages/deck_management/DeckManagement";
 import LoginPage from "./pages/login/LoginPage";
+import NotFoundPage from "./pages/not_found_page/NotFoundPage";
 
 const router = createBrowserRouter([
   {
@@ -30,6 +31,10 @@ const router = createBrowserRouter([
       {
         path: "signIn",
         element: <LoginPage />
+      },
+      {
+        path: "*",
+        element: <NotFoundPage />
       },
     ],
   },
