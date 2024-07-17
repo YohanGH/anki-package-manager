@@ -1,4 +1,4 @@
-import { Outlet } from "react-router-dom";
+import { Outlet, useLocation } from "react-router-dom";
 import { ToastContainer } from "react-toastify";
 
 // Import component
@@ -6,6 +6,9 @@ import NavBar from "./components/navbar/Navbar";
 import Footer from "./components/footer/Footer";
 
 function App() {
+  const location = useLocation();
+  const noFooter = ["/signIn"]
+
   return (
     <>
       <ToastContainer
@@ -24,7 +27,7 @@ function App() {
       <main>
         <Outlet />
       </main>
-      <Footer />
+      {noFooter.includes(location.pathname) === false && <Footer />}
     </>
   );
 }
