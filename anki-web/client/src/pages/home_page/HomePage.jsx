@@ -21,14 +21,14 @@ const featuredPosts = [
   {
     title: "LoremIpsum", // TODO : Change text
     date: "Juillet 2024",
-    description: "LoremIpsum", // TODO : Change text
+    description: "Lorem", // TODO : Change text
     image: Zen, // TODO : Change images
     imageLabel: "thinking", // TODO : Change text
   },
   {
-    title: "LoremIpsum", // TODO : Change text
+    title: "Verba volant, scripta manent", // TODO : Change text
     date: "Juillet 2024",
-    description: "LoremIpsum", // TODO : CHange text
+    description: "Lorem", // TODO : CHange text
     image: Zen, // TODO : Change images
     imageLabel: "thinking", // TODO : Change text
   },
