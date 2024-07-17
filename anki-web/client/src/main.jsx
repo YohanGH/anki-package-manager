@@ -8,6 +8,7 @@ import App from "./App";
 import HomePage from "./pages/home_page/HomePage";
 import DeckCreation from "./pages/deck_creation/DeckCreation";
 import DeckManagement from "./pages/deck_management/DeckManagement";
+import LoginPage from "./pages/login/LoginPage";
 
 const router = createBrowserRouter([
   {
@@ -25,6 +26,10 @@ const router = createBrowserRouter([
       {
         path: "manage-decks",
         element: <DeckManagement />
+      },
+      {
+        path: "signIn",
+        element: <LoginPage />
       },
     ],
   },
