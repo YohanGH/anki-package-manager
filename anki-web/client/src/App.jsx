@@ -1,6 +1,9 @@
 import { Outlet } from "react-router-dom";
 import { ToastContainer } from "react-toastify";
 
+// Import component
+import NavBar from "./components/navbar/Navbar";
+
 function App() {
   return (
     <>
@@ -16,6 +19,7 @@ function App() {
         pauseOnHover
         theme="colored"
       />
+      <NavBar />
       <main>
         <Outlet />
       </main>

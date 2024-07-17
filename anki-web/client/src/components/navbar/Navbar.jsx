@@ -1,5 +1,5 @@
 import { AppBar, Toolbar, Typography, Box, Button } from "@mui/material";
-import { Link as RouterLink } from "react-Router-dom";
+import { Link as RouterLink } from "react-router-dom";
 
 function NavBar() {
   return (
@@ -16,7 +16,7 @@ function NavBar() {
             Créer un Deck
           </Button>
           <Button color="inherit" component={RouterLink} to="manage-decks">
-            Gérer les Decks
+          Gérer les Decks
           </Button>
         </Box>
       </Toolbar>
