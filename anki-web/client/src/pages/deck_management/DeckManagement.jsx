@@ -27,7 +27,6 @@ function DeckManagement() {
               <MenuItem value="filter1">Filtre 1</MenuItem>
             </Select>
           </FormControl>
-          <Box sx={{ mb: "1rem" }}>{/* Display selected filters here */}</Box>
           <Box sx={{ display: "flex", flexDirection: "column", gap: "1rem" }}>
             <DeckCard name="Deck1" description="Description 1" />
           </Box>
