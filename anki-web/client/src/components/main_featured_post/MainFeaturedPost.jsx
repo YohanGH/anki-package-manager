@@ -1,6 +1,9 @@
 import { useMediaQuery, Box, Grid, Paper, Typography} from "@mui/material"
 import PropTypes from "prop-types";
 
+// Import img
+import bgImg from "../../../assets/images/MainImg.svg"
+
 function MainFeaturedPost(mainFeaturedPost) {
     const { post } = mainFeaturedPost;
     const isSmallScreen = useMediaQuery("(max-width:428px)");
@@ -27,7 +30,7 @@ function MainFeaturedPost(mainFeaturedPost) {
             bottom: 0,
             right: 0,
             left: 0,
-            background: `url("blop")`,
+            background: `url(${bgImg})`, // TODO : Change img
             backgroundPosition: "center",
             backgroundRepeat: "no-repeat",
             backgroundSize: "cover",
