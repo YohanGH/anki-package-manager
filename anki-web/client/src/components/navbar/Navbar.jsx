@@ -18,6 +18,9 @@ function NavBar() {
           <Button color="inherit" component={RouterLink} to="manage-decks">
             Decks
           </Button>
+          <Button color="inherit" component={RouterLink} to="signin">
+            Sign-In
+          </Button>
         </Box>
       </Toolbar>
     </AppBar>

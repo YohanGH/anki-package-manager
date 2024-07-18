@@ -1,16 +1,16 @@
 const AbstractRepository = require("./AbstractRepository");
 
-// The model manages CRUD operations for the ‘User’ table.
+// The model manages CRUD operations for the ‘categorie’ table.
 
-class UserRepository extends AbstractRepository {
+class CategorieRepository extends AbstractRepository {
   constructor() {
     // Call the constructor of the parent class (AbstractRepository)
-    // and pass the table name "user" as configuration
-    super({ table: "user" });
+    // and pass the table name "categorie" as configuration
+    super({ table: "categorie" });
   }
 
   // The C of CRUD - Create operation
-  // Create a new User
+  // Create a new categorie
   async create(data) {
     const [result] = await this.database.query(
       `INSERT INTO ${this.table} SET ?`,
@@ -20,7 +20,7 @@ class UserRepository extends AbstractRepository {
   }
 
   // The R of CRUD - Read operations
-  // Retrieve all Users
+  // Retrieve all categories
   async read() {
     const [rows] = await this.database.query(
       `SELECT * FROM ${this.table}`
@@ -29,7 +29,7 @@ class UserRepository extends AbstractRepository {
   }
 
   // The U of CRUD - Update operation
-  // Update a User by its ID
+  // Update a categorie by its ID
   async update(id, data) {
     const [result] = await this.database.query(
       `UPDATE ${this.table} SET ? WHERE id = ?`,
@@ -39,7 +39,7 @@ class UserRepository extends AbstractRepository {
   }
 
   // The D of CRUD - Delete operation
-  // Delete a User by its ID
+  // Delete a categorie by its ID
   async delete(id) {
     const [result] = await this.database.query(
       `DELETE FROM ${this.table} WHERE id = ?`,
@@ -52,23 +52,6 @@ class UserRepository extends AbstractRepository {
     const [rows] = await this.database.query(`SELECT * FROM ${this.table}`);
     return rows;
   }
-  
-  async findByEmail(email) {
-    const [rows] = await this.database.query(
-      `SELECT * FROM ${this.table} WHERE email = ?`,
-      [email]
-    );
-    return rows[0];
-  }
-
-  async findById(id) {
-    const [rows] = await this.database.query(
-      `SELECT * FROM ${this.table} WHERE id = ?`,
-      [id]
-    );
-    return rows[0];
-  }
-
 }
 
-module.exports = UserRepository;
+module.exports = CategorieRepository;
