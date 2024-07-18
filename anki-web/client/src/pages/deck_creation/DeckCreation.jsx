@@ -50,7 +50,6 @@ function DeckCreation() {
           console.error("Error: ", error);
           notify(error.message || "An error occurred.", "error");
       }
-    };
 
     return (
       <Container maxWidth="sm">
