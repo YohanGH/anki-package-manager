@@ -25,7 +25,7 @@ const createDeck = async (req, res, next) => {
  */
 const getAllDecks = async (req, res, next) => {
   try {
-    const Decks = await tables.deck.getAllDecks();
+    const Decks = await tables.deck.read();
     res.status(200).json(Decks);
   } catch (error) {
     res.status(400).json({ error: error.message });
