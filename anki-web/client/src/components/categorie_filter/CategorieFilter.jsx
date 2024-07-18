@@ -20,7 +20,7 @@ CategorieFilter.propTypes = {
     categories: PropTypes.arrayOf(
         PropTypes.shape({
             id: PropTypes.oneOfType([PropTypes.string, PropTypes.number]).isRequired,
-            name: PropTypes.string.isRequired
+            title: PropTypes.string.isRequired
         })
     ).isRequired,
     filter: PropTypes.oneOfType([PropTypes.string, PropTypes.number]).isRequired,

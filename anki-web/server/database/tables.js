@@ -1,6 +1,7 @@
 // Import the repository modules responsible for handling data operations on the tables
 const DeckRepository = require("./models/DeckRepository"); 
 const CategorieRepository = require("./models/CategorieRepository");
+const UserRepository = require("./models/UserRepository");
 
 // Create an empty object to hold data repositories for different tables
 const tables = {};
@@ -13,6 +14,7 @@ const tables = {};
 // Register each repository as data access point for its table
 tables.deck = new DeckRepository();
 tables.categorie = new CategorieRepository();
+tables.user = new UserRepository();
 
 /* ************************************************************************* */
 
