@@ -72,63 +72,66 @@ const loginUser = async (req, res, next) => {
  * This function retrieves a specific Deck by its ID using the deckService. It returns the Deck with a 200 status code if found,
  * a 404 status code if not found, or an error message with a 400 status code on failure.
  */
-const getUserById = async (req, res, next) => {
-  try {
-    const user = await tables.user.findById(req.params.id); // Supposons que findById est une méthode valide
-    if (user) {
-      res.status(200).json(user);
-    } else {
-      res.status(404).json({ error: "User not found" });
-    }
-  } catch (error) {
-    res.status(400).json({ error: error.message });
-    next(error);
-  }
-};
+
+// const getUserById = async (req, res, next) => {
+//   try {
+//     const user = await tables.user.findById(req.params.id); // Supposons que findById est une méthode valide
+//     if (user) {
+//       res.status(200).json(user);
+//     } else {
+//       res.status(404).json({ error: "User not found" });
+//     }
+//   } catch (error) {
+//     res.status(400).json({ error: error.message });
+//     next(error);
+//   }
+// };
 
 /**
  * Edit (Update) a specific User by ID
  * This function updates a specific User by its ID using the UserService. It returns the updated User with a 200 status code if successful,
  * a 404 status code if the User is not found, or an error message with a 400 status code on failure.
  */
-const updateUser = async (req, res, next) => {
-  try {
-    const user = await tables.user.updateUser(req.params.id, req.body);
-    if (user) {
-      res.status(200).json(user);
-    } else {
-      res.status(404).json({ error: "Package not found" });
-    }
-  } catch (error) {
-    res.status(400).json({ error: error.message });
-    next(error);
-  }
-};
+
+// const updateUser = async (req, res, next) => {
+//   try {
+//     const user = await tables.user.updateUser(req.params.id, req.body);
+//     if (user) {
+//       res.status(200).json(user);
+//     } else {
+//       res.status(404).json({ error: "Package not found" });
+//     }
+//   } catch (error) {
+//     res.status(400).json({ error: error.message });
+//     next(error);
+//   }
+// };
 
 /**
  * Delete a specific User by ID
  * This function deletes a specific User by its ID using the UserService. It returns a 204 status code if successful,
  * a 404 status code if the User is not found, or an error message with a 400 status code on failure.
  */
-const deleteUser = async (req, res, next) => {
-  try {
-    const success = await tables.user.deleteUser(req.params.id);
-    if (success) {
-      res.status(204).end();
-    } else {
-      res.status(404).json({ error: "Package not found" });
-    }
-  } catch (error) {
-    res.status(400).json({ error: error.message });
-    next(error);
-  }
-};
+
+// const deleteUser = async (req, res, next) => {
+//   try {
+//     const success = await tables.user.deleteUser(req.params.id);
+//     if (success) {
+//       res.status(204).end();
+//     } else {
+//       res.status(404).json({ error: "Package not found" });
+//     }
+//   } catch (error) {
+//     res.status(400).json({ error: error.message });
+//     next(error);
+//   }
+// };
 
 module.exports = {
   createUser,
   getAllUsers,
   loginUser,
-  getUserById,
-  updateUser,
-  deleteUser,
+  // getUserById,
+  // updateUser,
+  // deleteUser,
 };

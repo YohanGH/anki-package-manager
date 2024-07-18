@@ -38,62 +38,65 @@ const getAllDecks = async (req, res, next) => {
  * This function retrieves a specific Deck by its ID using the deckService. It returns the Deck with a 200 status code if found,
  * a 404 status code if not found, or an error message with a 400 status code on failure.
  */
-const getDeckById = async (req, res, next) => {
-  try {
-    const Deck = await tables.deck.getDeckById(req.params.id);
-    if (Deck) {
-      res.status(200).json(Deck);
-    } else {
-      res.status(404).json({ error: "Package not found" });
-    }
-  } catch (error) {
-    res.status(400).json({ error: error.message });
-    next(error)
-  }
-};
+
+// const getDeckById = async (req, res, next) => {
+//   try {
+//     const Deck = await tables.deck.getDeckById(req.params.id);
+//     if (Deck) {
+//       res.status(200).json(Deck);
+//     } else {
+//       res.status(404).json({ error: "Package not found" });
+//     }
+//   } catch (error) {
+//     res.status(400).json({ error: error.message });
+//     next(error)
+//   }
+// };
 
 /**
  * Edit (Update) a specific Deck by ID
  * This function updates a specific Deck by its ID using the deckService. It returns the updated Deck with a 200 status code if successful,
  * a 404 status code if the Deck is not found, or an error message with a 400 status code on failure.
  */
-const updateDeck = async (req, res, next) => {
-  try {
-    const Deck = await tables.deck.updateDeck(req.params.id, req.body);
-    if (Deck) {
-      res.status(200).json(Deck);
-    } else {
-      res.status(404).json({ error: "Package not found" });
-    }
-  } catch (error) {
-    res.status(400).json({ error: error.message });
-    next(error);
-  }
-};
+
+// const updateDeck = async (req, res, next) => {
+//   try {
+//     const Deck = await tables.deck.updateDeck(req.params.id, req.body);
+//     if (Deck) {
+//       res.status(200).json(Deck);
+//     } else {
+//       res.status(404).json({ error: "Package not found" });
+//     }
+//   } catch (error) {
+//     res.status(400).json({ error: error.message });
+//     next(error);
+//   }
+// };
 
 /**
  * Delete a specific Deck by ID
  * This function deletes a specific Deck by its ID using the deckService. It returns a 204 status code if successful,
  * a 404 status code if the Deck is not found, or an error message with a 400 status code on failure.
  */
-const deleteDeck = async (req, res, next) => {
-  try {
-    const success = await tables.deck.deleteDeck(req.params.id);
-    if (success) {
-      res.status(204).end();
-    } else {
-      res.status(404).json({ error: "Package not found" });
-    }
-  } catch (error) {
-    res.status(400).json({ error: error.message });
-    next(error);
-  }
-};
+
+// const deleteDeck = async (req, res, next) => {
+//   try {
+//     const success = await tables.deck.deleteDeck(req.params.id);
+//     if (success) {
+//       res.status(204).end();
+//     } else {
+//       res.status(404).json({ error: "Package not found" });
+//     }
+//   } catch (error) {
+//     res.status(400).json({ error: error.message });
+//     next(error);
+//   }
+// };
 
 module.exports = {
   createDeck,
   getAllDecks,
-  getDeckById,
-  updateDeck,
-  deleteDeck,
+  // getDeckById,
+  // updateDeck,
+  // deleteDeck,
 };
