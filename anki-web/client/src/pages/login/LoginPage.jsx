@@ -1,18 +1,23 @@
-import { Checkbox, Box, CssBaseline, FormControlLabel, Grid, TextField, Typography, Button, Link, Avatar, Paper } from "@mui/material";
+import { Checkbox, Box, CssBaseline, FormControlLabel, Grid, TextField, Typography, Button, Link, Avatar, Paper, Alert } from "@mui/material";
 import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
 
 // import components 
 import Copyright from "../../components/copyright/Copyright";
 
+// Import Hook
+import useLogin from "../../hook/useLogin"
+
 function LoginPage() {
+
+    // Hook param for use `useLoginPage`
+    const { login, loading, error } = useLogin();
+
     const handleSubmit = (event) => {
         event.preventDefault();
         const data = new FormData(event.currentTarget);
-        // TODO : Modification le console.info
-        console.info({
-            email: data.get('email'),
-            password: data.get('password'),
-        })
+        const email = data.get("email");
+        const password = data.get("password");
+        login(email, password);
     }
 
     return (
@@ -56,6 +61,11 @@ function LoginPage() {
               onSubmit={handleSubmit}
               sx={{ mt: "1rem" }}
             >
+              {error && (
+                <Alert severity="error" sx={{ mb: "2rem" }}>
+                  {error}
+                </Alert>
+              )}
               <TextField
                 margin="normal"
                 required
@@ -85,8 +95,9 @@ function LoginPage() {
                 fullWidth
                 variant="contained"
                 sx={{ mt: "3rem", mb: "2rem" }}
+                disabled={loading}
               >
-                Sign in
+                {loading ? 'Signing in...' : 'Sign in'}
               </Button>
               <Grid container>
                 <Grid item xs>
