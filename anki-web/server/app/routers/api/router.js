@@ -8,6 +8,6 @@ const deckRouter = require("./deck/router");
 
 // The main router uses sub-routers for different resources
 // Exemple de route
-router.use("/api/deck", deckRouter);
+router.use("/deck", deckRouter);
 
 module.exports = router;
