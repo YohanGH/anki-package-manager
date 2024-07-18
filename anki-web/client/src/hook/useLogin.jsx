@@ -23,15 +23,17 @@ const useLogin = () => {
           if (response.status !== 200) {
             const errorText = await response.text();
             console.error("Login error text: ", errorText);
-            throw new Error("Login failed");
+            throw new Error(errorText || "Login failed");
           }
           navigate("/");
           
         } catch (err) {
-          console.error("Login error: ", error);
-          setError(error.message || "An error occurred");
-        } 
-    }
+          console.error("Login error: ", err);
+          setError(err.message || "An error occurred");
+        } finally {
+          setLoading(false);
+      }
+    };
 
     return { login, loading, error };
 };

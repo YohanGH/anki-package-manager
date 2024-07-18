@@ -1,6 +1,6 @@
 // Import access to database tables
-const tables = require("../../database/tables");
 const bcrypt = require('bcryptjs');
+const tables = require("../../database/tables");
 
 // The controller manages the business logic for each route.
 
@@ -48,8 +48,9 @@ const loginUser = async (req, res, next) => {
       res.status(404).json({ error: "User not found" });
       return;
     }
-    
+
     const isMatch = await bcrypt.compare(password, user.password); // Assuming passwords are hashed
+    
     if (!isMatch) {
       res.status(400).json({ error: "Invalid credentials" });
       return;
@@ -60,6 +61,25 @@ const loginUser = async (req, res, next) => {
     // If user is found and credentials match, return user details or token
     // Here, you'd typically generate a JWT token for the user
     res.status(200).json({ message: "Login successful", user }); // You may return a token instead of user details
+  } catch (error) {
+    res.status(400).json({ error: error.message });
+    next(error);
+  }
+};
+
+/**
+ * Read (Get) a specific Deck by ID
+ * This function retrieves a specific Deck by its ID using the deckService. It returns the Deck with a 200 status code if found,
+ * a 404 status code if not found, or an error message with a 400 status code on failure.
+ */
+const getUserById = async (req, res, next) => {
+  try {
+    const user = await tables.user.findById(req.params.id); // Supposons que findById est une méthode valide
+    if (user) {
+      res.status(200).json(user);
+    } else {
+      res.status(404).json({ error: "User not found" });
+    }
   } catch (error) {
     res.status(400).json({ error: error.message });
     next(error);
@@ -108,6 +128,7 @@ module.exports = {
   createUser,
   getAllUsers,
   loginUser,
+  getUserById,
   updateUser,
   deleteUser,
 };
