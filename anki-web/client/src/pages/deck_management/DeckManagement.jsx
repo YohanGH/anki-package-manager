@@ -1,70 +1,24 @@
-import { Typography, Box,  Container, FormControl, InputLabel, MenuItem, Select, Grid } from "@mui/material";
-import { useState, useEffect } from "react";
-import notify from "../../utils/notify";
+import { Typography, Box,  Container } from "@mui/material";
+import { useState } from "react";
 
 // Import components
-import DeckCard from "../../components/deck_card/DeckCard";
+import DeckList from "../../components/deck_list/DeckList";
+import CategorieFilter from "../../components/categorie_filter/CategorieFilter";
+
+// Import Hook
+import useFetchData from "../../hook/useFetchData";
 
 function DeckManagement() {
     const URL = import.meta.env.VITE_API_URL;
     const [filter, setFilter] = useState('');
-    const [decks, setDecks] = useState([]);
-    const [categories, setCategories] = useState([]);
+
+    // Hook param for use `useFecthData`
+    const { data: decks } = useFetchData(`${URL}/deck`);
+    const { data: categories } = useFetchData(`${URL}/categorie`);
 
     const handleFilterChange = (event) => {
         setFilter(event.target.value);
     }
-
-    useEffect(() => {
-      const fetchData = async () => {
-        try {
-          const response = await fetch(
-            `${URL}/deck`
-          );
-  
-          // Check if the response is not OK
-          if (response.status !== 200) {
-            const errorText = await response.text();
-            console.error("Fetch error text: ", errorText);
-            throw new Error("Error during data recovery.");
-          }
-  
-          // Parse the response as JSON
-          const data = await response.json();
-          setDecks(data);
-  
-        } catch (error) {
-          console.error("Fetch error: ", error);
-          notify(error.message || "An error occurred.", "error");
-        }
-      };
-
-      const fetchCategories = async () => {
-        try {
-          const response = await fetch(
-            `${URL}/categorie`
-          );
-  
-          if (response.status !== 200) {
-            const errorText = await response.text();
-            console.error("Fetch error text: ", errorText);
-            throw new Error("Error during data recovery.");
-          }
-  
-          const data = await response.json();
-          setCategories(data);
-  
-        } catch (error) {
-          console.error("Fetch error: ", error);
-          notify(error.message || "An error occurred.", "error");
-        }
-      };
-
-      fetchData();
-      fetchCategories();
-    }, [URL]);
-
-
 
     return (
       <Container maxWidth="md">
@@ -72,27 +26,12 @@ function DeckManagement() {
           <Typography variant="h4" component="h1" gutterBottom>
             Manage Decks
           </Typography>
-          <FormControl fullWidth sx={{ mb: "1rem" }}>
-            <InputLabel>Filter</InputLabel>
-            <Select
-              value={filter}
-              onChange={handleFilterChange}
-              label="Filtrer"
-            >
-              {categories.map((categorie) => (
-                <MenuItem key={categorie.id} value={categorie.title}>
-                  {categorie.title}
-                </MenuItem>
-              ))}
-            </Select>
-          </FormControl>
-          <Grid container spacing={2}>
-            {decks.map((deck) => (
-              <Grid item xs={12} sm={6} key={deck.id}>
-                <DeckCard title={deck.title} description={deck.description} />
-              </Grid>
-            ))}
-          </Grid>
+          <CategorieFilter
+            categories={categories}
+            filter={filter}
+            handleFilterChange={handleFilterChange}
+          />
+          <DeckList decks={decks} />
         </Box>
       </Container>
     );
