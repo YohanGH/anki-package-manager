@@ -9,6 +9,7 @@ function DeckManagement() {
     const URL = import.meta.env.VITE_API_URL;
     const [filter, setFilter] = useState('');
     const [decks, setDecks] = useState([]);
+    const [categories, setCategories] = useState([]);
 
     const handleFilterChange = (event) => {
         setFilter(event.target.value);
@@ -37,8 +38,33 @@ function DeckManagement() {
           notify(error.message || "An error occurred.", "error");
         }
       };
+
+      const fetchCategories = async () => {
+        try {
+          const response = await fetch(
+            `${URL}/categorie`
+          );
+  
+          if (response.status !== 200) {
+            const errorText = await response.text();
+            console.error("Fetch error text: ", errorText);
+            throw new Error("Error during data recovery.");
+          }
+  
+          const data = await response.json();
+          setCategories(data);
+  
+        } catch (error) {
+          console.error("Fetch error: ", error);
+          notify(error.message || "An error occurred.", "error");
+        }
+      };
+
       fetchData();
+      fetchCategories();
     }, [URL]);
+
+
 
     return (
       <Container maxWidth="md">
@@ -53,15 +79,19 @@ function DeckManagement() {
               onChange={handleFilterChange}
               label="Filtrer"
             >
-              <MenuItem value="filter1">Filtre 1</MenuItem>
+              {categories.map((categorie) => (
+                <MenuItem key={categorie.id} value={categorie.title}>
+                  {categorie.title}
+                </MenuItem>
+              ))}
             </Select>
           </FormControl>
           <Grid container spacing={2}>
-              {decks.map((deck) => (
-                <Grid item xs={12} sm={6} key={deck.id}>
-                  <DeckCard title={deck.title} description={deck.description} />
-                </Grid>
-              ))}
+            {decks.map((deck) => (
+              <Grid item xs={12} sm={6} key={deck.id}>
+                <DeckCard title={deck.title} description={deck.description} />
+              </Grid>
+            ))}
           </Grid>
         </Box>
       </Container>
