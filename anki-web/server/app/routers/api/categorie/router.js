@@ -8,10 +8,10 @@ const categorieController = require("../../../Controllers/categoriesController")
 // Define Your service Here
 
 // The categorieRouter manages the routes specific to the ‘categorie’ resource.
-router.post('/', categorieController.createCategorie);
+// router.post('/', categorieController.createCategorie);
 router.get('/', categorieController.getAllCategories);
-router.get('/:id', categorieController.getCategorieById);
-router.put('/:id', categorieController.updateCategorie);
-router.delete('/:id', categorieController.deleteCategorie);
+// router.get('/:id', categorieController.getCategorieById);
+// router.put('/:id', categorieController.updateCategorie);
+// router.delete('/:id', categorieController.deleteCategorie);
 
 module.exports = router;

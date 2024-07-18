@@ -30,23 +30,25 @@ class CategorieRepository extends AbstractRepository {
 
   // The U of CRUD - Update operation
   // Update a categorie by its ID
-  async update(id, data) {
-    const [result] = await this.database.query(
-      `UPDATE ${this.table} SET ? WHERE id = ?`,
-      [data, id]
-    );
-    return result.affectedRows;
-  }
-
+  
+  // async update(id, data) {
+  //   const [result] = await this.database.query(
+  //     `UPDATE ${this.table} SET ? WHERE id = ?`,
+  //     [data, id]
+  //   );
+  //   return result.affectedRows;
+  // }
+  
   // The D of CRUD - Delete operation
   // Delete a categorie by its ID
-  async delete(id) {
-    const [result] = await this.database.query(
-      `DELETE FROM ${this.table} WHERE id = ?`,
-      [id]
-    );
-    return result.affectedRows;
-  }
+
+  // async delete(id) {
+  //   const [result] = await this.database.query(
+  //     `DELETE FROM ${this.table} WHERE id = ?`,
+  //     [id]
+  //   );
+  //   return result.affectedRows;
+  // }
 
   async getAll() {
     const [rows] = await this.database.query(`SELECT * FROM ${this.table}`);
