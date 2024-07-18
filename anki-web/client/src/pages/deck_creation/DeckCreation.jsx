@@ -19,37 +19,40 @@ function DeckCreation() {
     }
 
     const handleSubmit = async (event) => {
-        event.preventDefault();
+      event.preventDefault();
 
-        // Create Object FormData for send in form
-        const formData = new FormData();
-        formData.append("title", event.target.title.value);
-        formData.append("description", event.target.description.value);
-        formData.append("filters", filters);
-        formData.append("file", selectFile);
+      // Create Object FormData for send in form
+      const formData = new FormData();
+      formData.append("title", event.target.title.value);
+      formData.append("description", event.target.description.value);
+      formData.append("filters", filters);
+      formData.append("file", selectFile);
 
-        // Send formData in backend with requet fetch
-        try {
-          // Send formData in backend with request fetch
-          const response = await fetch(`${URL}/deck`, {
-              method: "POST",
-              headers: {"Content-Type": "application/json",},
-              body: formData,
-              credentials: "include",
-          });
+      // Send formData in backend with requet fetch
+      try {
+        // Send formData in backend with request fetch
+        const response = await fetch(`${URL}/deck`, {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: formData,
+          credentials: "include",
+        });
 
-          const data = await response.json();
+        const data = await response.json();
 
-          if (response.status === 201) {
-              // Manage response in backend
-              notify("Deck created successfully!", "success");
-          } else {
-              throw new Error(data.error || "An error occurred while creating the deck.");
-          }
+        if (response.status === 201) {
+          // Manage response in backend
+          notify("Deck created successfully!", "success");
+        } else {
+          throw new Error(
+            data.error || "An error occurred while creating the deck."
+          );
+        }
       } catch (error) {
-          console.error("Error: ", error);
-          notify(error.message || "An error occurred.", "error");
+        console.error("Error: ", error);
+        notify(error.message || "An error occurred.", "error");
       }
+    };
 
     return (
       <Container maxWidth="sm">
