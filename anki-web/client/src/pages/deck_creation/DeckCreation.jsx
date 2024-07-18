@@ -1,7 +1,9 @@
 import { useState } from "react";
 import { Box, Container, Typography, TextField, Button, InputLabel, MenuItem, Select, FormControl, Alert } from "@mui/material";
+import notify from "../../utils/notify";
 
 function DeckCreation() {
+    const URL = import.meta.env.VITE_API_URL;
     const [filters, setFilters] = useState([]);
     const [selectFile, setSelectFile] = useState(null);
     const [fileName, setFileName] = useState("");
@@ -16,7 +18,7 @@ function DeckCreation() {
         setFileName(file ? file.name : "");
     }
 
-    const handleSubmit = (event) => {
+    const handleSubmit = async (event) => {
         event.preventDefault();
 
         // Create Object FormData for send in form
@@ -27,19 +29,27 @@ function DeckCreation() {
         formData.append("file", selectFile);
 
         // Send formData in backend with requet fetch
-        fetch("/api/upload", {
-            method: "POST",
-            body: formData,
-        })
-        .then((response) => response.json())
-        .then((data) => {
-            // Manage response in backend
-            console.info(data) // TODO : Modify 
-        })
-        .catch((error) => {
-            console.error("Error: ", error);
-        });
-    };
+        try {
+          // Send formData in backend with request fetch
+          const response = await fetch(`${URL}/deck`, {
+              method: "POST",
+              headers: {"Content-Type": "application/json",},
+              body: formData,
+              credentials: "include",
+          });
+
+          const data = await response.json();
+
+          if (response.status === 201) {
+              // Manage response in backend
+              notify("Deck created successfully!", "success");
+          } else {
+              throw new Error(data.error || "An error occurred while creating the deck.");
+          }
+      } catch (error) {
+          console.error("Error: ", error);
+          notify(error.message || "An error occurred.", "error");
+      }
 
     return (
       <Container maxWidth="sm">
