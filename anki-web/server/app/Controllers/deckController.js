@@ -10,9 +10,20 @@ const tables = require("../../database/tables");
  */
 const createDeck = async (req, res, next) => {
   try {
-    const Deck = await tables.deck.createDeck(req.body);
+    // Récupérer l'ID de la catégorie à partir du titre de la catégorie
+    const idCategorie = await tables.categorie.getCategoryIdByTitle(req.body.filter);
+
+    const deckData = {
+      title: req.body.title,
+      description: req.body.description,
+      id_categorie: idCategorie,
+      filePath: req.file.path,
+    };
+
+    const Deck = await tables.deck.create(deckData);
     res.status(201).json(Deck);
   } catch (error) {
+    console.error('Error creating deck:', error);
     res.status(400).json({ error: error.message });
     next(error);
   }

@@ -37,9 +37,8 @@ function DeckCreation() {
             autoComplete="off"
             onSubmit={handleSubmit}
           >
-            <TextField resource label="Title" variant="outlined" name="title" />
+            <TextField label="Title" variant="outlined" name="title" />
             <TextField
-              resource
               label="Description"
               variant="outlined"
               name="description"

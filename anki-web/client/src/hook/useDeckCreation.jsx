@@ -1,23 +1,23 @@
 import { useState } from "react";
 
-const useDeckCreation = () => {
+const useDeckCreation = (URL) => {
     const [filter, setFilter] = useState("");
     const [selectFile, setSelectFile] = useState(null);
     const [fileName, setFileName] = useState("");
 
-    // Fonction pour gérer le changement de filtre
+    // Filter change management function
     const handleFilterChange = (event) => {
         setFilter(event.target.value);
     }
 
-    // Fonction pour gérer le changement de fichier
+    // File change management function
     const handleFileChange = (event) => {
         const file = event.target.files[0];
         setSelectFile(file);
         setFileName(file ? file.name : "");
       }
 
-      // Fonction pour gérer la soumission du formulaire
+      // Function for managing form submission
       const handleSubmit = async (event) => {
         event.preventDefault();
   
@@ -25,7 +25,7 @@ const useDeckCreation = () => {
         const formData = new FormData();
         formData.append("title", event.target.title.value);
         formData.append("description", event.target.description.value);
-        formData.append("filter", JSON.stringify(filter)); // Convert array to JSON string
+        formData.append("filter", filter);
         formData.append("file", selectFile);
   
         // Send formData in backend with requet fetch
@@ -33,7 +33,6 @@ const useDeckCreation = () => {
           // Send formData in backend with request fetch
           const response = await fetch(`${URL}/deck`, {
             method: "POST",
-            headers: { "Content-Type": "application/json" },
             body: formData,
           });
   
