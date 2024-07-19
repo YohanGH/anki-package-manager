@@ -28,6 +28,18 @@ class CategorieRepository extends AbstractRepository {
     return rows;
   }
 
+  // Retrieve category ID by title
+  async getCategoryIdByTitle(title) {
+    const [rows] = await this.database.query(
+      'SELECT id FROM categorie WHERE title = ?',
+      [title]
+    );
+    if (rows.length === 0) {
+      throw new Error('Category not found');
+    }
+    return rows[0].id;
+  }
+
   // The U of CRUD - Update operation
   // Update a categorie by its ID
   
