@@ -15,6 +15,7 @@ CREATE TABLE deck (
     id INT PRIMARY KEY AUTO_INCREMENT,
     title VARCHAR(50) NOT NULL,
     description TEXT NOT NULL,
+    filePath VARCHAR(255) NOT NULL DEFAULT "",
     id_categorie INT,
     id_user INT,
     FOREIGN KEY (id_categorie) REFERENCES categorie(id),
