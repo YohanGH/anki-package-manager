@@ -19,6 +19,7 @@ const tables = require("../../database/tables");
 //   }
 // };
 
+
 /**
  * Browse (Get all) Categories
  * This function retrieves all Categories using the CategorieService. It returns the list of Categories with a 200 status code on success,
